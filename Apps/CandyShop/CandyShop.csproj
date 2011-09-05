@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="App\CandyAttribute.cs" />
     <Compile Include="App\CandyPreprocessor.cs" />
+    <Compile Include="App\Navigation\Boxes\WelcomeWindow.cs" />
     <Compile Include="App\Xlio\ExportGridWindow.cs" />
     <Compile Include="App\Editing\SimpleHtmlEditorWindow.cs" />
     <Compile Include="App\Session.cs" />
@@ -106,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\CandyShop.js" />
+    <Content Include="App\Navigation\Boxes\welcome.css" />
+    <Content Include="App\Navigation\Boxes\icons64\apps.png" />
+    <Content Include="App\Navigation\Boxes\icons64\cloud.png" />
+    <Content Include="App\Navigation\Boxes\icons64\people.png" />
+    <Content Include="App\Navigation\Boxes\icons64\reports.png" />
+    <Content Include="App\Navigation\Boxes\WelcomeWindow.js" />
     <Content Include="App\Xlio\ExportGridWindow.js" />
     <Content Include="App\Editing\SimpleHtmlEditorWindow.js" />
     <Content Include="browse.htm" />
@@ -169,7 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\CodeReports\" />
-    <Folder Include="App\Navigation\" />
     <Folder Include="client\js\cache\" />
     <Folder Include="client\js\generated\" />
   </ItemGroup>

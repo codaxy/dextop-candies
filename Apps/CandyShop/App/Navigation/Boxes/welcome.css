@@ -1,0 +1,48 @@
+﻿/* Welcome panel */
+
+.welcome-navigation-pane
+{    
+    margin: 10px 0px 0px 10px;
+    border: 1px solid #C0C0C0;
+    text-align: center;
+    float: left;    
+    width: 128px;
+    height: 128px;
+    font-family: Verdana;    
+}
+
+.welcome-navigation-pane.x-item-over
+{
+    background-color: #FFFFB9;
+}
+
+
+/* Icons x64 */
+
+.people64
+{
+    background-position: center center;
+    background-image: url('icons64/people.png');
+    background-repeat: no-repeat;
+}
+
+.cloud64
+{
+    background-position: center center;
+    background-image: url('icons64/cloud.png');
+    background-repeat: no-repeat;
+}
+
+.apps64
+{
+    background-position: center center;
+    background-image: url('icons64/apps.png');
+    background-repeat: no-repeat;
+}
+
+.reports64
+{
+    background-position: center center;
+    background-image: url('icons64/reports.png');
+    background-repeat: no-repeat;
+}

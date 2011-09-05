@@ -22,6 +22,8 @@ namespace CandyShop
                 "App/*/");
 
             RegisterCss("client/css/site.css");
+            
+            RegisterCss("App/Navigation/Boxes/welcome.css");
         }
 
         public override string ModuleName
