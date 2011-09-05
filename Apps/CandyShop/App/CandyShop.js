@@ -1,13 +1,4 @@
-﻿Ext.define('CandyShop.CandyModel', {
-	extend: 'Ext.data.Model',
-	fields: [
-            { name: 'id', type: 'string' },
-            { name: 'text', type: 'string' },
-            { name: 'tooltip', type: 'string' }
-        ]
-});
-
-Ext.define('CandyShop.CandyShop', {
+﻿Ext.define('CandyShop.CandyShop', {
 	extend: 'Ext.window.Window',
 	title: 'What can I get you?',
 	width: 240,
@@ -17,28 +8,31 @@ Ext.define('CandyShop.CandyShop', {
 	iconCls: 'candy-shop',
 	initComponent: function () {
 
-		var store = Ext.define('Ext.data.TreeStore', {
-			proxy: {
-				model: 'CandyShop.CandyModel',
-				type: 'memory',
-				data: CandyShop.Candies
-			},
+		var store = Ext.create('Ext.data.TreeStore', {
 			root: {
 				expanded: true,
-				id: 'root'
+				children: CandyShop.Candies
 			}
 		});
 
-		var tree = Ext.define('Ext.tree.Panel', {
+		var tree = Ext.create('Ext.tree.Panel', {
 			border: false,
 			store: store,
-			rootVisible: true
+			rootVisible: false,
+			listeners: {
+				scope: this,
+				itemdblclick: function (tree, record) {
+					if (record.raw.windowType) {
+						Dextop.getSession().requestWindow(record.raw.windowType);
+					}
+				}
+			}
 		});
 
 		Ext.apply(this, {
 			closeAction: 'hide',
 			layout: 'fit',
-			items: [tree]
+			items: [tree]			
 		});
 
 		this.callParent(arguments);

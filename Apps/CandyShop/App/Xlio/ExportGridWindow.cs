@@ -11,7 +11,7 @@ using Codaxy.Xlio.IO;
 namespace CandyShop.App.Xlio
 {
 	[Candy("xlio-grid-export",
-		Title = "Export Grid to Excel"
+		Title = "Export Grid to Excel", Category = "Xlio"
 	)]
 	public class ExportGridWindow : DextopWindow
 	{

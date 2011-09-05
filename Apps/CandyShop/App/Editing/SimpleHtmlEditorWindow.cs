@@ -7,10 +7,13 @@ using Codaxy.Dextop;
 
 namespace CandyShop.App
 {
-	public class NotepadWindow : DextopWindow
+    [Candy("simple-html-editor",
+        Title = "Simple HTML Editor", Category = "HTML Editing"
+    )]
+	public class SimpleHtmlEditorWindow : DextopWindow
 	{
-        [DextopRemotableConstructor(alias="notepad")]
-        public NotepadWindow() { }
+        [DextopRemotableConstructor(alias="simple-html-editor")]
+        public SimpleHtmlEditorWindow() { }
 
 		[DextopRemotable]
 		public String UploadContent(String content)

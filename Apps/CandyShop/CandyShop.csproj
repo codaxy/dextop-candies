@@ -58,9 +58,6 @@
     <Reference Include="Codaxy.Xlio.XmlSerializers">
       <HintPath>..\..\packages\Codaxy.Xlio.0.8.0\lib\Codaxy.Xlio.XmlSerializers.dll</HintPath>
     </Reference>
-    <Reference Include="EcmaScript.NET.modified">
-      <HintPath>..\..\packages\YUICompressor.NET.1.5.0.0\lib\NET35\EcmaScript.NET.modified.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -89,15 +86,15 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Yahoo.Yui.Compressor">
-      <HintPath>..\..\packages\YUICompressor.NET.1.5.0.0\lib\NET35\Yahoo.Yui.Compressor.dll</HintPath>
+    <Reference Include="Yahoo.Yui.Compressor, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\YUICompressor.NET.1.6.0.0\lib\NET35\Yahoo.Yui.Compressor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\CandyAttribute.cs" />
     <Compile Include="App\CandyPreprocessor.cs" />
     <Compile Include="App\Xlio\ExportGridWindow.cs" />
-    <Compile Include="App\Editing\NotepadWindow.cs" />
+    <Compile Include="App\Editing\SimpleHtmlEditorWindow.cs" />
     <Compile Include="App\Session.cs" />
     <Compile Include="Application.cs" />
     <Compile Include="Application.Module.cs" />
@@ -110,7 +107,7 @@
   <ItemGroup>
     <Content Include="App\CandyShop.js" />
     <Content Include="App\Xlio\ExportGridWindow.js" />
-    <Content Include="App\Editing\NotepadWindow.js" />
+    <Content Include="App\Editing\SimpleHtmlEditorWindow.js" />
     <Content Include="browse.htm" />
     <Content Include="client\css\icons48\CandyShop.png" />
     <Content Include="client\css\icons\CandyShop.png" />
@@ -207,6 +204,6 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>REM $(SolutionDir)Nuget\nuget install $(ProjectDir)packages.config -o $(SolutionDir)Packages</PreBuildEvent>
+    <PreBuildEvent>$(SolutionDir)Nuget\nuget install $(ProjectDir)packages.config -o $(SolutionDir)Packages</PreBuildEvent>
   </PropertyGroup>
 </Project>

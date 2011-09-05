@@ -9,14 +9,8 @@
 		});
 	},
 
-	createWindow: function () {
-		Dextop.getSession().remote.Instantiate(this.windowType, this.windowArgs, {
-			type: 'alert',
-			success: function (result) {
-				var window = Dextop.create(result);
-				Dextop.getSession().addDesktopWindow(window);
-				window.show();
-			}
-		});
+	createWindow: function () 
+	{
+		Dextop.getSession().requestWindow(this.windowType, this.windowArgs);
 	}
 });

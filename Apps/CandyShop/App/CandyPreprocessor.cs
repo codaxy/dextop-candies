@@ -13,39 +13,65 @@ namespace CandyShop.App
 		{
 			public String text { get; set; }			
 			public String tooltip { get; set; }
-			public String id { get; set; }
+			public String windowType { get; set; }
 			public bool leaf { get; set; }
 			public String iconCls { get; set; }
 
-			public Model[] children;
+			public List<Model> children;
 		}
 
 
 
 		public void ProcessAssemblies(DextopApplication application, IList<System.Reflection.Assembly> assemblies, System.IO.Stream outputStream)
 		{
-			List<Model> list = new List<Model>();
+            var root = new Model { children = new List<Model>() };
+
+			
 			foreach (var assembly in assemblies)
 			{
 				var dict = Codaxy.Common.Reflection.AssemblyHelper.GetTypeAttributeDictionaryForAssembly<CandyAttribute>(assembly, false);
 				foreach (var v in dict.OrderBy(a => a.Value.Category).ThenBy(a => a.Value.Title))
 				{
+                    Model parent;
+                    if (String.IsNullOrEmpty(v.Value.Category))
+                        parent = root;
+                    else
+                    {
+                        parent = root;
+                        var crumbs = v.Value.Category.Split('\\', '/');
+                        foreach (var crumb in crumbs)
+                        {
+                            if (parent.children == null)
+                                parent.children = new List<Model>();
+                            var node = parent.children.FirstOrDefault(a => a.text == crumb);
+                            if (node == null)
+                            {
+                                node = new Model { text = crumb };
+                                parent.children.Add(node);
+                            }                            
+                            node.leaf = false;
+                            parent = node;
+                        }
+                        
+                    }
 					var m = new Model
 					{
 						tooltip = v.Value.Description,
 						text = v.Value.Title,
-						id = v.Value.WindowType,
+						windowType = v.Value.WindowType,
 						leaf = true,
 					};
 
-					list.Add(m);
+                    if (parent.children == null)
+                        parent.children = new List<Model>();
+					parent.children.Add(m);
 				}
 			}
 			using (var w = new StreamWriter(outputStream))
 			{
 				w.WriteLine("Ext.ns('CandyShop');");
 				w.Write("CandyShop.Candies = ");
-				w.Write(DextopUtil.Encode(list));
+				w.Write(DextopUtil.Encode(root.children));
 				w.WriteLine(";");
 			}
 		}

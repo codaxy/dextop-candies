@@ -1,9 +1,9 @@
-﻿Ext.define('CandyShop.NotepadWindow', {
+﻿Ext.define('CandyShop.SimpleHtmlEditorWindow', {
 	extend: 'Dextop.Window',
 	width: 800,
 	height: 600,
 
-	title: 'Notepad',
+	title: 'HTML Editor',
 	iconCls: 'notepad',
 	border: true,
 

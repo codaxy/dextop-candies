@@ -21,5 +21,16 @@
 
 	addDesktopWindow: function (win) {
 		this.app.getDesktop().addWindow(win);
+	},
+
+	requestWindow: function (windowType, windowArgs) {
+		Dextop.getSession().remote.Instantiate(windowType, windowArgs, {
+			type: 'alert',
+			success: function (result) {
+				var win= Dextop.create(result);
+				Dextop.getSession().addDesktopWindow(win);
+				win.show();
+			}
+		});
 	}
 });
