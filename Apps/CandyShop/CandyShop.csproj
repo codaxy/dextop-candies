@@ -96,6 +96,12 @@
   <ItemGroup>
     <Compile Include="App\CandyAttribute.cs" />
     <Compile Include="App\CandyPreprocessor.cs" />
+    <Compile Include="App\CodeReports\ReportPreviewWindow.cs" />
+    <Compile Include="App\CodeReports\RandomReports\IRandomReportGenerator.cs" />
+    <Compile Include="App\CodeReports\RandomReports\RandomReportSelector.cs" />
+    <Compile Include="App\CodeReports\RandomReports\IRandomReportFilter.cs" />
+    <Compile Include="App\CodeReports\RandomReports\Report1.cs" />
+    <Compile Include="App\CodeReports\ReportSelectorWindowBase.cs" />
     <Compile Include="App\Navigation\Boxes\WelcomeWindow.cs" />
     <Compile Include="App\Xlio\ExportGridWindow.cs" />
     <Compile Include="App\Editing\SimpleHtmlEditorWindow.cs" />
@@ -106,10 +112,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="PdfConvert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\CandyShop.js" />
+    <Content Include="App\CodeReports\ReportPreviewWindow.js" />
+    <Content Include="App\CodeReports\RandomReports\RandomReportSelector.js" />
+    <Content Include="App\CodeReports\ReportSelectorWindowBase.js" />
     <Content Include="App\Navigation\Boxes\welcome.css" />
     <Content Include="App\Navigation\Boxes\icons64\apps.png" />
     <Content Include="App\Navigation\Boxes\icons64\cloud.png" />
@@ -119,6 +129,7 @@
     <Content Include="App\Xlio\ExportGridWindow.js" />
     <Content Include="App\Editing\SimpleHtmlEditorWindow.js" />
     <Content Include="browse.htm" />
+    <Content Include="client\css\report.css" />
     <Content Include="client\css\icons48\CandyShop.png" />
     <Content Include="client\css\icons\CandyShop.png" />
     <Content Include="client\js\App.js" />
@@ -178,9 +189,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\CodeReports\" />
     <Folder Include="client\js\cache\" />
     <Folder Include="client\js\generated\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\CandyShop.Reports\CandyShop.Reports.csproj">
+      <Project>{8E938254-2469-4A2B-9E16-F50045A5794C}</Project>
+      <Name>CandyShop.Reports</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

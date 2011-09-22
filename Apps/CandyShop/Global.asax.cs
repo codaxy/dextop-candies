@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Codaxy.Dextop;
+using Codaxy.WkHtmlToPdf;
 
 namespace CandyShop
 {
@@ -43,6 +44,8 @@ namespace CandyShop
                 RegisterRoutes(RouteTable.Routes);
 
                 RegisterDextopApplication();
+
+				InitPdfConvert();
             }
             catch
             {
@@ -52,6 +55,12 @@ namespace CandyShop
                 throw;
             }
         }
+
+		private void InitPdfConvert()
+		{
+			PdfConvert.Environment.TempFolderPath = DextopUtil.MapPath("~");
+			PdfConvert.Environment.Timeout = 5000;
+		}
 
         private void RegisterDextopApplication()
         {
