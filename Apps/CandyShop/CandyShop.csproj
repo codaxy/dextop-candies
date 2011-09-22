@@ -43,20 +43,23 @@
     <Reference Include="Codaxy.CodeReports.Exporters.Xlio">
       <HintPath>..\..\packages\Codaxy.CodeReports.Exporters.Xlio.0.1.0\lib\Codaxy.CodeReports.Exporters.Xlio.dll</HintPath>
     </Reference>
-    <Reference Include="Codaxy.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Codaxy.Common.0.5.4\lib\Codaxy.Common.dll</HintPath>
+    <Reference Include="Codaxy.Common">
+      <HintPath>..\..\packages\Codaxy.Common.0.5.8\lib\Codaxy.Common.dll</HintPath>
     </Reference>
     <Reference Include="Codaxy.Common.Localization">
       <HintPath>..\..\packages\Codaxy.Common.Localization.0.5.5\lib\Codaxy.Common.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Codaxy.Dextop">
-      <HintPath>..\..\packages\Codaxy.Dextop.Core.0.7.10\lib\Codaxy.Dextop.dll</HintPath>
+      <HintPath>..\..\packages\Codaxy.Dextop.Core.0.7.11\lib\Codaxy.Dextop.dll</HintPath>
     </Reference>
     <Reference Include="Codaxy.Xlio">
       <HintPath>..\..\packages\Codaxy.Xlio.0.8.0\lib\Codaxy.Xlio.dll</HintPath>
     </Reference>
     <Reference Include="Codaxy.Xlio.XmlSerializers">
       <HintPath>..\..\packages\Codaxy.Xlio.0.8.0\lib\Codaxy.Xlio.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>..\..\packages\YUICompressor.NET.1.6.0.2\lib\net35\EcmaScript.NET.modified.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -86,8 +89,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Yahoo.Yui.Compressor, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\YUICompressor.NET.1.6.0.0\lib\NET35\Yahoo.Yui.Compressor.dll</HintPath>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\..\packages\YUICompressor.NET.1.6.0.2\lib\net35\Yahoo.Yui.Compressor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
