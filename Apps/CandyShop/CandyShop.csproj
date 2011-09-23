@@ -102,6 +102,7 @@
     <Compile Include="App\CodeReports\RandomReports\IRandomReportFilter.cs" />
     <Compile Include="App\CodeReports\RandomReports\Report1.cs" />
     <Compile Include="App\CodeReports\ReportSelectorWindowBase.cs" />
+    <Compile Include="App\GMaps\GMapPicker.cs" />
     <Compile Include="App\Navigation\Boxes\WelcomeWindow.cs" />
     <Compile Include="App\Xlio\ExportGridWindow.cs" />
     <Compile Include="App\Editing\SimpleHtmlEditorWindow.cs" />
@@ -120,6 +121,7 @@
     <Content Include="App\CodeReports\ReportPreviewWindow.js" />
     <Content Include="App\CodeReports\RandomReports\RandomReportSelector.js" />
     <Content Include="App\CodeReports\ReportSelectorWindowBase.js" />
+    <Content Include="App\GMaps\GMapPicker.js" />
     <Content Include="App\Navigation\Boxes\welcome.css" />
     <Content Include="App\Navigation\Boxes\icons64\apps.png" />
     <Content Include="App\Navigation\Boxes\icons64\cloud.png" />

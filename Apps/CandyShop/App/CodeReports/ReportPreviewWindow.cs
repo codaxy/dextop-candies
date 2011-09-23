@@ -52,11 +52,12 @@ namespace CandyShop.App.CodeReports
 						context.Response.ContentType = "application/force-download";
 						context.Response.AddHeader("Content-Disposition", "attachment; filename=\"" + Guid.NewGuid().ToString() + ".xlsx" + "\"");
 						XlsxReportWriter.WriteToStream(Report, Themes.Default, context.Response.OutputStream);
+                        context.Response.Flush();
 						break;
 					case "pdf":
 						context.Response.BufferOutput = true;
-						context.Response.ContentType = "application/force-download";
-						context.Response.AddHeader("Content-Disposition", "attachment; filename=\"" + Guid.NewGuid().ToString() + ".pdf" + "\"");						
+						context.Response.ContentType = "application/pdf";
+						//context.Response.AddHeader("Content-Disposition", "attachment; filename=\"" + Guid.NewGuid().ToString() + ".pdf" + "\"");						
 						PdfConvert.ConvertHtmlToPdf(new PdfDocument
 						{
 							Url = context.Request.Url.ToString().Replace("=pdf", "=html")
@@ -64,6 +65,7 @@ namespace CandyShop.App.CodeReports
 						{
 							OutputStream = context.Response.OutputStream
 						});
+                        context.Response.Flush();
 						break;
 					default:
 						context.Response.ContentType = "text/plain";
