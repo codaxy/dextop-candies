@@ -3,7 +3,7 @@
 
 	width: 500,
 	height: 500,
-	title: 'Pick a place',
+	title: 'Map',
 
 	initComponent: function () {
 		this.addEvents(['markermoved']);
