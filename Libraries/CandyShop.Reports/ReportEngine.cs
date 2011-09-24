@@ -56,6 +56,8 @@ namespace CandyShop.Reports
 					reportCache.Add(rgi);					
 				}
 			}
+
+			Assemblies = null; //not needed anymore
 			return reportCache;
 		}
 

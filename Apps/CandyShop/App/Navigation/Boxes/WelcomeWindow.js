@@ -18,7 +18,7 @@
 				type: 'memory',
 				data: [{
 					title: 'Manage Domains',
-					type: 'domains',
+					type: 'gmap-picker',
 					iconCls: 'cloud64'
 				}, {
 					title: 'Manage Users',
@@ -26,11 +26,11 @@
 					iconCls: 'people64'
 				}, {
 					title: 'Manage Applications',
-					type: 'apps',
+					type: 'simple-html-editor',
 					iconCls: 'apps64'
 				}, {
 					title: 'View Reports',
-					type: 'reports',
+					type: 'random-report-selector',
 					iconCls: 'reports64'
 				}]
 			}
