@@ -36,5 +36,10 @@ namespace CandyShop
             RegisterStandardAssemblyPreprocessors("client/js/generated", preprocessors);
 			preprocessors.Add("client/js/generated/candies.js", new CandyPreprocessor());
         }
+
+        protected override void RegisterLoaders(Dictionary<string, IDextopFileLoader> loaders)
+        {
+            
+        }
     }
 }
